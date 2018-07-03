@@ -1,4 +1,4 @@
-# Test Fullstack Tech-K
+﻿# Test Fullstack Tech-K
 
 ## Objetivo
 ---
@@ -119,7 +119,7 @@ La información obtenida por el scraper debe ser presentada en forma de tabla. E
 * Visualizar las categorías en formato Json
 * http://localhost:8000/scraper/categories/
 * Visualizar los libros en formato Json
-* http://localhost:8000/scraper/books
+* http://localhost:8000/scraper/books/
 * Proceso que guarda los datos en BD está en:
 * http://localhost:8000/scraper/save_books/
 ---
