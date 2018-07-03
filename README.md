@@ -16,7 +16,6 @@ Por medio de este test se evaluarán algunos de tus conocimientos que nos intere
 5. Desarrollar lo que se indica. Si existen supuestos, estos deben definirse claramente en el README
 6. Entregar desarrollo por medio de un pull-request y notificar envío por email
 
-
 ## Instrucciones de desarrollo
 ---
 Desarrollar un scraper que permita obtener información de [esta página web](http://books.toscrape.com/index.html), almacenarla en BBDD y luego visualizarla en una interfaz web. 
@@ -110,3 +109,29 @@ La información obtenida por el scraper debe ser presentada en forma de tabla. E
 * Patrones de diseño
 * Orden del código
 
+
+
+## Comentarios Rafael Rojas
+---
+* Para poder visualizar la data extraída seguir los siguientes pasos.
+* Ejecutar el servidor mediante docker-compose up
+* A través del navegador (o el uso de Postman) entrar a:
+* Visualizar las categorías en formato Json
+* http://localhost:8000/scraper/categories/
+* Visualizar los libros en formato Json
+* http://localhost:8000/scraper/books
+* Proceso que guarda los datos en BD está en:
+* http://localhost:8000/scraper/save_books/
+---
+* La extracción tanto de categorías como de libros toma mucho tiempo.
+* Por lo cual sería recomendable utilizar la librería de Scrapy para comprobar
+* Si la data se extrae más rapidamente.
+* https://scrapy.org/
+* De igual manera, es compresible el tiempo que toma, por los flujos dinámicos de la extracción.
+* Ya que primero extrae las categorías
+* Luego por cada categoría revisa los libros del catalogo
+* Luego por cada libro, extrae la información.
+* Antes de pasar a la siguiente categoría, el proceso revisa si hay más páginas para navegar. (Next page)
+* Todo esto, lo almacena en un listado de datos en formato json.
+---
+* La data extraída en total (sólo libros) pesa 1.69mb
